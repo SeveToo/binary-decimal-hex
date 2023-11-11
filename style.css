@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --main-color: #f5f5f5;
+  --white-color: #ffffff;
+  --first-color: #316bda;
+  --second-color: #649bf2;
+  --shadow-white: 0 0 10px white;
+  --shadow-blue: 0 0 10px #316bda;
+  --border-radius: 6px;
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--main-color);
+  color: var(--first-color);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  background: var(--first-color);
+  color: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 30px; */
+  width: 35vw;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-blue);
+}
+
+.App_numberSystems {
+  margin-top: 70px;
+  /* padding: 20px; */
+  display: flex;
+  /* width: 70vw; */
+  justify-content: space-evenly;
+  align-items: flex-start;
+  /* background: #000; */
+}
+
+.numberSystems__system {
+  /* background: rgb(13, 13, 46); */
+  /* min-width: 400px; */
+  /* width: 27vw; */
+  margin: 0 30px;
+  /* padding: 30px; */
+}
+
+.system__header {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.systemBoard {
+  background: var(--white-color);
+  border-radius: var(--border-radius);
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  position: relative;
+  width: 366px;
+  gap: 11px;
+}
+
+.systemBoard::before {
+  content: "";
+  height: 30px;
+  width: 65%;
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: var(--first-color);
+  box-shadow: 0 0 25px var(--first-color);
+  border-radius: var(--border-radius);
+}
+
+/* .systemBoard__groupCells {
+  background: red;
+} */
+
+.groupCells__cells.groupCells__binary {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  grid-gap: 3px;
+}
+
+.groupCells__cells.groupCells__decimal {
+  width: 100%;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: center;
+  grid-gap: 3px;
+  /* background: #000; */
+}
+.groupCells__cells.groupCells__hexadecimal {
+  width: 100%;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: center;
+  grid-gap: 3px;
+  /* background: #000; */
+}
+
+.cells__cell {
+  border: 2px solid var(--first-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  display: grid;
+  place-content: center;
+  transition: 0.3s;
+}
+
+.cells__hexadecimal,
+.cells__decimal {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--first-color);
+}
+
+.groupCells__label {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 13px;
+  /* background: #000; */
+  font-family: "Montserrat", sans-serif;
+}
+
+.systemBoard__label {
+  position: absolute;
+  left: 50%;
+  top: 140%;
+  font-size: 25px;
+  font-weight: 400;
+  transform: translate(-50%, -50%);
+  color: var(--second-color);
+}
+
+.binary__label {
+  letter-spacing: 4px;
+}
+
+@media screen and (max-width: 1200px) {
+  h1 {
+    display: none;
+  }
+  .App_numberSystems {
+    flex-direction: column;
+    align-items: center;
+  }
+  .numberSystems__system {
+    margin-bottom: 3rem;
+    border: 1px solid var(--second-color);
+    padding: 3rem 5rem;
+    padding-bottom: 6rem;
+    border-radius: 1rem;
+  }
+}
